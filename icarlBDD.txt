@@ -1,0 +1,56 @@
+-- Crear la base de datos "icarl"
+CREATE DATABASE icarl;
+
+-- Usar la base de datos "icarl"
+USE icarl;
+
+-- Crear la tabla "clientes"
+CREATE TABLE clientes (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  Nombre VARCHAR(50) NOT NULL,
+  Apellido VARCHAR(50) NOT NULL,
+  Email VARCHAR(100) NOT NULL,
+  Telefono VARCHAR(20) NOT NULL
+);
+
+-- Crear la tabla "mecanicos"
+CREATE TABLE mecanicos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  Nombre VARCHAR(50) NOT NULL,
+  Apellido VARCHAR(50) NOT NULL,
+  Email VARCHAR(100) NOT NULL,
+  Telefono VARCHAR(20) NOT NULL
+);
+
+-- Crear la tabla "vehiculos"
+CREATE TABLE vehiculos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  Imagen VARCHAR(100) NOT NULL,
+  Marca VARCHAR(50) NOT NULL,
+  Modelo VARCHAR(50) NOT NULL,
+  Anio INT NOT NULL,
+  Clasificacion VARCHAR(50) NOT NULL,
+  CodigoBarras VARCHAR(50) NOT NULL
+);
+
+-- Crear la tabla "repuestos"
+CREATE TABLE repuestos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  Imagen VARCHAR(100) NOT NULL,
+  Marca VARCHAR(50) NOT NULL,
+  Tipo VARCHAR(50) NOT NULL,
+  Clasificacion VARCHAR(50) NOT NULL,
+  CodigoBarras VARCHAR(50) NOT NULL
+);
+
+
+-- Crear la tabla "ventas"
+CREATE TABLE ventas (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  Cliente INT NOT NULL,
+  TipoServicio VARCHAR(50) NOT NULL,
+  Mecanico INT NOT NULL,
+  Vehiculo INT NOT NULL,
+  Repuesto INT NOT NULL,
+  Fecha DATE NOT NULL,
+);
